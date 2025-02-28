@@ -8,3 +8,10 @@ I am learning React.js from different Video Courses, Books, and Websites.
 > 1. <https://tailwindcss.com/>
 > 1. <https://vite.dev/>
 > 1. <https://nextjs.org/docs>
+
+## Project Setup
+
+```powershell
+npm create vite@latest
+
+```
