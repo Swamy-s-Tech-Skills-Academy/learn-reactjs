@@ -23,7 +23,6 @@ function App() {
         <label>Hero name:</label>
         <input type='text' placeholder='Hero Name please' className='border border-gray-300 rounded-lg p-2 w-1/4' />
       </div>
-
     </div>
   )
 }
