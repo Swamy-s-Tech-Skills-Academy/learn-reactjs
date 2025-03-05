@@ -5,6 +5,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '1rem', // Optional: adds horizontal padding
+      screens: {
+        sm: '100%',
+        md: '100%',
+        lg: '1200px',  // Adjust as needed
+        xl: '1400px',  // Adjust as needed
+        '2xl': '1600px', // Instead of a fixed 1536px, you can set a custom value
+      },
+    },
     extend: {},
   },
   plugins: [],
