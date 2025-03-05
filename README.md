@@ -17,11 +17,7 @@ npm create vite@latest
 npm create vite@latest react-heroes
 
 npm install -D tailwindcss@3 postcss autoprefixer
-npm install -D tailwindcss@latest
-
 npx tailwindcss init -p
-node node_modules/tailwindcss/dist/cli.js init -p
-
 ```
 
 ## Trouble shooting
