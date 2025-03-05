@@ -4,6 +4,7 @@ I am learning React.js from different Video Courses, Books, and Websites.
 
 ## Reference(s)
 
+> 1. <https://v3.tailwindcss.com/docs/guides/vite>
 > 1. <https://react.dev/learn>
 > 1. <https://tailwindcss.com/>
 > 1. <https://vite.dev/>
@@ -13,9 +14,9 @@ I am learning React.js from different Video Courses, Books, and Websites.
 
 ```powershell
 npm create vite@latest
+npm create vite@latest react-heroes
 
-npm install tailwindcss @tailwindcss/vite
-npm install tailwindcss @tailwindcss/postcss postcss
+npm install -D tailwindcss@3 postcss autoprefixer
 npm install -D tailwindcss@latest
 
 npx tailwindcss init -p
