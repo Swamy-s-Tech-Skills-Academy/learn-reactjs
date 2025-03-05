@@ -29,5 +29,4 @@ Remove-Item package-lock.json
 npm install
 
 Get-ChildItem .\node_modules\.bin\
-
 ```
