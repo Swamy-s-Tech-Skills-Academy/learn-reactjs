@@ -16,6 +16,21 @@ npm create vite@latest
 
 npm install tailwindcss @tailwindcss/vite
 npm install tailwindcss @tailwindcss/postcss postcss
+npm install -D tailwindcss@latest
 
 npx tailwindcss init -p
+node node_modules/tailwindcss/dist/cli.js init -p
+
+```
+
+## Trouble shooting
+
+```powershell
+Remove-Item -Recurse -Force node_modules
+Remove-Item package-lock.json
+
+npm install
+
+Get-ChildItem .\node_modules\.bin\
+
 ```
