@@ -187,12 +187,225 @@ module.exports = {
 
 ## Common Issues and Solutions
 
-// ...existing code...
+### Class Name Conflicts
+
+**Problem**: Tailwind classes might conflict with other CSS frameworks or libraries.
+
+**Solution**:
+- Use Tailwind's prefix option in the configuration
+- Implement component isolation patterns
+- Be mindful of CSS specificity
+
+### Large Bundle Sizes in Development
+
+**Problem**: Development builds can be slow or large due to including all possible utility classes.
+
+**Solution**:
+- Tailwind 3.x's JIT mode addresses this issue
+- Consider using `@apply` for frequently repeated patterns
+- Ensure proper content paths in configuration
+
+### IDE Support
+
+**Problem**: Working with long class strings can be cumbersome without proper tooling.
+
+**Solution**:
+- Use Tailwind CSS IntelliSense extension for VSCode
+- Format class strings consistently
+- Consider extracting complex class combinations into components or use `@apply`
+
+### Integration with Other Libraries
+
+**Problem**: Some UI libraries may have conflicting styles or patterns.
+
+**Solution**:
+- Use Tailwind's prefix option to prevent conflicts
+- Adopt a consistent approach for third-party library styling
+- Consider using CSS modules or scoped styles for specific components
 
 ## Using with React Components
 
-// ...existing code...
+### Class Name Composition
+
+For conditional class names, consider using helper libraries like `clsx` or `classnames`:
+
+```tsx
+import clsx from 'clsx';
+
+function Button({ primary, disabled, children }) {
+  const classes = clsx(
+    'px-4 py-2 rounded-md font-medium transition-colors',
+    primary ? 'bg-blue-500 text-white hover:bg-blue-600' : 'bg-gray-200 text-gray-800 hover:bg-gray-300',
+    disabled && 'opacity-50 cursor-not-allowed'
+  );
+  
+  return (
+    <button className={classes} disabled={disabled}>
+      {children}
+    </button>
+  );
+}
+```
+
+### Extracting Component Classes
+
+For reusable component styles, use Tailwind's `@apply` directive in your CSS:
+
+```css
+/* In your CSS file */
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-500 text-white hover:bg-blue-600;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+  }
+}
+```
+
+Then use these classes in your components:
+
+```tsx
+function Button({ primary, children }) {
+  return (
+    <button className={`btn ${primary ? 'btn-primary' : 'btn-secondary'}`}>
+      {children}
+    </button>
+  );
+}
+```
+
+### Dynamic Class Generation
+
+For complex dynamic classes, consider creating utility functions:
+
+```tsx
+function getAlignmentClasses(alignment) {
+  switch (alignment) {
+    case 'left':
+      return 'text-left justify-start';
+    case 'center':
+      return 'text-center justify-center';
+    case 'right':
+      return 'text-right justify-end';
+    default:
+      return '';
+  }
+}
+
+function AlignedContent({ alignment, children }) {
+  return (
+    <div className={`flex ${getAlignmentClasses(alignment)}`}>
+      {children}
+    </div>
+  );
+}
+```
 
 ## Integration with TypeScript
 
-// ...existing code...
+### Type-Safe Class Composition
+
+When using helper libraries like `clsx` or `classnames`, TypeScript will provide type checking:
+
+```tsx
+import clsx from 'clsx';
+
+interface ButtonProps {
+  primary?: boolean;
+  disabled?: boolean;
+  children: React.ReactNode;
+}
+
+function Button({ primary, disabled, children }: ButtonProps) {
+  // TypeScript will check that these values are boolean
+  const classes = clsx(
+    'px-4 py-2 rounded-md',
+    primary && 'bg-blue-500 text-white',
+    disabled && 'opacity-50 cursor-not-allowed'
+  );
+  
+  return (
+    <button className={classes} disabled={disabled}>
+      {children}
+    </button>
+  );
+}
+```
+
+### Custom Class Utilities
+
+You can create type-safe utilities for common class patterns:
+
+```tsx
+type Alignment = 'left' | 'center' | 'right';
+type Size = 'sm' | 'md' | 'lg';
+
+const getAlignmentClasses = (alignment: Alignment): string => {
+  const classes = {
+    left: 'text-left justify-start',
+    center: 'text-center justify-center',
+    right: 'text-right justify-end',
+  };
+  return classes[alignment];
+};
+
+const getSizeClasses = (size: Size): string => {
+  const classes = {
+    sm: 'text-sm py-1 px-2',
+    md: 'text-base py-2 px-4',
+    lg: 'text-lg py-3 px-6',
+  };
+  return classes[size];
+};
+```
+
+### Integration with styled-components
+
+When using both Tailwind and styled-components (as in this project), you can pass Tailwind classes via props:
+
+```tsx
+import styled from 'styled-components';
+
+// Base component with styled-components
+const StyledButton = styled.button<{ $customStyle?: string }>`
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  
+  /* Apply Tailwind classes via props */
+  ${props => props.$customStyle && `@apply ${props.$customStyle};`}
+`;
+
+// Usage
+function Button({ primary, size }) {
+  let tailwindClasses = '';
+  
+  if (primary) {
+    tailwindClasses += 'bg-blue-500 text-white hover:bg-blue-600 ';
+  } else {
+    tailwindClasses += 'bg-gray-200 text-gray-800 hover:bg-gray-300 ';
+  }
+  
+  if (size === 'sm') tailwindClasses += 'text-sm py-1 px-2';
+  if (size === 'md') tailwindClasses += 'text-base py-2 px-4';
+  if (size === 'lg') tailwindClasses += 'text-lg py-3 px-6';
+  
+  return (
+    <StyledButton $customStyle={tailwindClasses}>
+      Button Text
+    </StyledButton>
+  );
+}
+```
+
+## Further Resources
+
+- [Official Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Tailwind CSS + React Best Practices](https://tailwindcss.com/docs/guides/vite#react)
+- [Tailwind CSS IntelliSense Extension](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)

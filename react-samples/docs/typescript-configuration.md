@@ -1,6 +1,6 @@
 # TypeScript Configuration Documentation
 
-This document provides an overview of the TypeScript configuration used in the React Samples project, explaining key settings and their purpose. For a general project overview, see the [README](./README.md), or for Tailwind CSS configuration details, see the [Tailwind Configuration Guide](./tailwind-configuration.md).
+This document provides an overview of the TypeScript configuration used in the React Samples project, explaining key settings and their purpose. For a general project overview, see the [README](./README.md), for Tailwind CSS configuration details, see the [Tailwind Configuration Guide](./tailwind-configuration.md), or to understand our styling approaches, see the [Styling Approaches Guide](./styling-approaches.md).
 
 ## Configuration Structure
 
@@ -148,6 +148,89 @@ The `jest.setup.ts` file contains global setup code for all tests:
 - Suppresses certain console errors during testing
 - Contains global setup and teardown hooks for all tests
 
+## TypeScript with Styling Solutions
+
+### TypeScript with Tailwind CSS
+
+When using Tailwind CSS with TypeScript in this project, there are a few TypeScript-specific considerations:
+
+- **Type-safe class name composition**: Use libraries like `clsx` or `classnames` with TypeScript for type-checking class conditions
+- **Custom Tailwind theme types**: Access your theme configuration in TypeScript by creating type definitions that match your theme structure
+- **Utility functions**: Create strongly-typed utility functions for common class name patterns
+
+### TypeScript with styled-components
+
+This project also uses styled-components with TypeScript. Key TypeScript features with styled-components include:
+
+1. **Props typing with generics**:
+   ```tsx
+   // Strongly typed props
+   interface ButtonProps {
+     primary?: boolean;
+     size?: 'small' | 'medium' | 'large';
+   }
+
+   const Button = styled.button<ButtonProps>`
+     padding: ${props => props.size === 'small' ? '0.5rem' : props.size === 'large' ? '1rem' : '0.75rem'};
+     background-color: ${props => props.primary ? '#4f46e5' : 'transparent'};
+     color: ${props => props.primary ? 'white' : '#4f46e5'};
+     border: 1px solid #4f46e5;
+   `;
+   
+   // Type-checked component usage
+   <Button primary size="large">Click me</Button>
+   ```
+
+2. **Theme typing**:
+   ```tsx
+   // Define theme structure
+   interface Theme {
+     colors: {
+       primary: string;
+       secondary: string;
+       background: string;
+     };
+     fontSizes: {
+       small: string;
+       medium: string;
+       large: string;
+     };
+   }
+   
+   // Type-safe theme usage
+   const Button = styled.button<{ $small?: boolean }>`
+     background-color: ${props => props.theme.colors.primary};
+     font-size: ${props => props.$small ? props.theme.fontSizes.small : props.theme.fontSizes.medium};
+   `;
+   ```
+
+3. **DefaultProps and required props**:
+   ```tsx
+   // Component with both styled-components and additional props
+   interface CardProps {
+     title: string; // Required prop
+     subtitle?: string; // Optional prop
+   }
+   
+   const Card = styled.div<CardProps>`
+     /* styled-component styles */
+   `;
+   
+   // TypeScript will enforce the required 'title' prop
+   <Card title="Hello World" />
+   ```
+
+4. **Transient props with $ prefix** (to avoid DOM attribute warnings):
+   ```tsx
+   // Using $ prefix to prevent props from being passed to the DOM
+   const Button = styled.button<{ $primary?: boolean }>`
+     color: ${props => props.$primary ? 'white' : 'black'};
+   `;
+   
+   // Usage
+   <Button $primary>Click me</Button>
+   ```
+
 ## Key Configuration Options Explained
 
 ### Compilation Target and Language Features
@@ -223,3 +306,59 @@ If JSX isn't being recognized properly:
 - Confirm `jsx` is set to `react-jsx` 
 - Ensure file extensions are .tsx for React components
 - Verify React types are installed
+
+## Testing TypeScript Code
+
+When testing TypeScript code with Jest (as configured in this project):
+
+1. **Type checking in tests**:
+   - Tests are written in TypeScript, providing type safety in test files
+   - Test utilities and mocks can leverage TypeScript interfaces
+   
+2. **Testing typed components**:
+   ```tsx
+   // Testing a typed component
+   interface ButtonProps {
+     label: string;
+     onClick: () => void;
+     disabled?: boolean;
+   }
+   
+   function Button({ label, onClick, disabled }: ButtonProps) {
+     return (
+       <button onClick={onClick} disabled={disabled}>
+         {label}
+       </button>
+     );
+   }
+   
+   test('Button renders with correct props', () => {
+     const handleClick = jest.fn();
+     render(<Button label="Click me" onClick={handleClick} />);
+     
+     // TypeScript ensures we're passing valid props
+     expect(screen.getByText('Click me')).toBeInTheDocument();
+   });
+   ```
+
+3. **Mocking typed modules**:
+   ```tsx
+   // TypeScript interface for a service
+   interface UserService {
+     getUser: (id: string) => Promise<User>;
+     updateUser: (user: User) => Promise<void>;
+   }
+   
+   // Type-safe mock
+   const mockUserService: jest.Mocked<UserService> = {
+     getUser: jest.fn(),
+     updateUser: jest.fn()
+   };
+   ```
+
+## Additional TypeScript Resources
+
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/)
+- [styled-components TypeScript Documentation](https://styled-components.com/docs/api#typescript)
+- [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
