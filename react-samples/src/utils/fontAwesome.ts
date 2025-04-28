@@ -15,7 +15,6 @@ import {
   faBars,
   faUser,
   faCode,
-  faReact
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -55,7 +54,6 @@ library.add(
   faBars,
   faUser,
   faCode,
-  faReact,
   
   // Brand icons
   faGithub,
