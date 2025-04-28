@@ -100,6 +100,54 @@ This configuration contains settings specific to Node.js environments, used by b
 }
 ```
 
+## Jest Configuration
+
+This project uses Jest for testing with TypeScript. The configuration is managed through a dedicated `jest.config.ts` file at the root of the project.
+
+### Jest Configuration File: jest.config.ts
+
+```typescript
+export default {
+  testEnvironment: 'jsdom',
+  transform: {
+    '^.+\\.(ts|tsx)?$': ['ts-jest', { useESM: true }],
+  },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+  moduleNameMapper: {
+    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+    '^.+\\.svg$': 'jest-transformer-svg',
+    '^@/(.*)$': '<rootDir>/src/$1'
+  },
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)']
+};
+```
+
+### Key Configuration Options
+
+- **testEnvironment**: Uses `jsdom` to simulate a browser-like environment for React component testing
+- **transform**: Specifies how different file types should be transformed before testing
+  - `ts-jest` with `useESM: true` handles TypeScript files with ESM support
+- **moduleFileExtensions**: File extensions that Jest will recognize as modules
+- **moduleNameMapper**: Maps import paths to mockable modules
+  - CSS files are mocked with `identity-obj-proxy`
+  - SVG files are handled with `jest-transformer-svg`
+  - Path aliases starting with `@/` are mapped to the `src` directory
+- **setupFilesAfterEnv**: Additional setup files that run after Jest is initialized
+  - `jest.setup.ts` contains global test setup code and mocks
+- **testMatch**: Patterns to detect test files
+  - Files in `__tests__` folders
+  - Files with `.test` or `.spec` extensions
+
+### Jest Setup File: jest.setup.ts
+
+The `jest.setup.ts` file contains global setup code for all tests:
+
+- Imports `@testing-library/jest-dom` for DOM testing matchers
+- Mocks browser APIs not available in JSDOM (e.g., `matchMedia`, `IntersectionObserver`)
+- Suppresses certain console errors during testing
+- Contains global setup and teardown hooks for all tests
+
 ## Key Configuration Options Explained
 
 ### Compilation Target and Language Features
