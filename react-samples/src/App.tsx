@@ -1,11 +1,11 @@
 import reactLogo from './assets/react.svg'
 import './App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { 
-  faCode, 
+import {
+  faCode,
   faCog,
-  faPuzzlePiece, 
-  faRocket, 
+  faPuzzlePiece,
+  faRocket,
   faList, // Replacing faWpforms
   faLaptop, // Replacing faLaptopCode
   faArrowRight
@@ -24,9 +24,9 @@ function App() {
             <img src={reactLogo} className="h-10 w-10 animate-spin-slow" alt="React logo" />
             <h1 className="ml-3 text-2xl font-bold text-gray-900">React Interview Prep</h1>
           </div>
-          <a 
-            href="https://github.com/your-username/react-samples" 
-            target="_blank" 
+          <a
+            href="https://github.com/Swamy-s-Tech-Skills-Academy/learn-reactjs/tree/main/react-samples"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-gray-500 hover:text-gray-700 text-sm flex items-center"
           >
@@ -35,13 +35,13 @@ function App() {
           </a>
         </div>
       </header>
-      
+
       <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* React Fundamentals */}
-          <CategoryCard 
+          <CategoryCard
             icon={faCode}
-            title="React Fundamentals" 
+            title="React Fundamentals"
             description="Components, props, state, and lifecycle methods"
             items={[
               { name: "Component Types", path: "/components/types" },
@@ -50,11 +50,11 @@ function App() {
               { name: "Lists & Keys", path: "/components/lists-keys" },
             ]}
           />
-          
+
           {/* React Hooks */}
-          <CategoryCard 
+          <CategoryCard
             icon={faCog}
-            title="React Hooks" 
+            title="React Hooks"
             description="Explore React's built-in hooks and custom hook patterns"
             items={[
               { name: "useState", path: "/hooks/use-state" },
@@ -64,11 +64,11 @@ function App() {
               { name: "Custom Hooks", path: "/hooks/custom-hooks" },
             ]}
           />
-          
+
           {/* React Patterns */}
-          <CategoryCard 
+          <CategoryCard
             icon={faPuzzlePiece}
-            title="React Patterns" 
+            title="React Patterns"
             description="Common patterns used in React applications"
             items={[
               { name: "Render Props", path: "/patterns/render-props" },
@@ -77,11 +77,11 @@ function App() {
               { name: "Context + Reducer", path: "/patterns/context-reducer" },
             ]}
           />
-          
+
           {/* Performance Optimization */}
-          <CategoryCard 
+          <CategoryCard
             icon={faRocket}
-            title="Performance Optimization" 
+            title="Performance Optimization"
             description="Techniques to optimize React performance"
             items={[
               { name: "Memoization", path: "/performance/memoization" },
@@ -90,11 +90,11 @@ function App() {
               { name: "React.memo", path: "/performance/react-memo" },
             ]}
           />
-          
+
           {/* Form Handling */}
-          <CategoryCard 
+          <CategoryCard
             icon={faList}
-            title="Form Handling" 
+            title="Form Handling"
             description="Best practices for forms in React"
             items={[
               { name: "Controlled Components", path: "/forms/controlled-components" },
@@ -102,11 +102,11 @@ function App() {
               { name: "Custom Form Hooks", path: "/forms/custom-hooks" },
             ]}
           />
-          
+
           {/* Interview Challenges */}
-          <CategoryCard 
+          <CategoryCard
             icon={faLaptop}
-            title="Interview Challenges" 
+            title="Interview Challenges"
             description="Common coding challenges from React interviews"
             items={[
               { name: "To-Do List", path: "/challenges/todo-list" },
@@ -117,7 +117,7 @@ function App() {
           />
         </div>
       </main>
-      
+
       <footer className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 border-t border-gray-200 mt-12">
         <p className="text-center text-gray-500 text-sm">
           React Interview Prep Examples - Built with React, TypeScript, and Tailwind CSS
@@ -149,8 +149,8 @@ function CategoryCard({ icon, title, description, items }: CategoryCardProps) {
           <ul className="divide-y divide-gray-200">
             {items.map((item) => (
               <li key={item.path} className="py-2">
-                <a 
-                  href={item.path} 
+                <a
+                  href={item.path}
                   className="block text-indigo-600 hover:text-indigo-900 hover:bg-gray-50 -m-2 p-2 rounded flex items-center"
                 >
                   <FontAwesomeIcon icon={faArrowRight} className="mr-2 text-xs" />
