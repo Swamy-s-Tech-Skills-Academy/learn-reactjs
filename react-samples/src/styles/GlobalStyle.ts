@@ -1,23 +1,39 @@
-/**
- * Global styles for the application.
- * 
- * Note: This file is primarily for documentation purposes.
- * The actual global styles are applied through Tailwind CSS
- * in src/index.css using Tailwind directives.
- * 
- * If you need additional global styles beyond Tailwind's defaults,
- * consider adding them to index.css using @layer base.
- */
-
-// Export the empty object to allow importing this file without side effects
-export default {};
+import { createGlobalStyle } from 'styled-components';
 
 /**
- * Example of how to add global styles in index.css:
+ * Global styles using styled-components.
  * 
- * @layer base {
- *   body {
- *     @apply m-0 p-0 font-sans;
- *   }
- * }
+ * Note: This project uses both Tailwind CSS (via index.css) and styled-components.
+ * This demonstrates how both styling approaches can coexist in the same project.
+ * 
+ * - Tailwind CSS is used for utility-based styling through className props
+ * - styled-components is used for component-specific styling and global styles
  */
+
+const GlobalStyle = createGlobalStyle`
+  /* These styles complement Tailwind's base styles */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /* Additional styles that might be harder to achieve with Tailwind */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Example of targeting specific elements globally */
+  a {
+    text-decoration: none;
+    transition: color 0.2s ease;
+    &:hover {
+      color: #3b82f6;
+    }
+  }
+
+  /* Example of a global reset that would work alongside Tailwind */
+  * {
+    box-sizing: border-box;
+  }
+`;
+
+export default GlobalStyle;

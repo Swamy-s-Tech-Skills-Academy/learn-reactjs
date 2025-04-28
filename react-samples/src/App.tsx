@@ -15,115 +15,123 @@ import {
   faGithub
 } from '@fortawesome/free-brands-svg-icons'
 
+// Import the GlobalStyle component
+import GlobalStyle from './styles/GlobalStyle'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 flex items-center justify-between">
-          <div className="flex items-center">
-            <img src={reactLogo} className="h-10 w-10 animate-spin-slow" alt="React logo" />
-            <h1 className="ml-3 text-2xl font-bold text-gray-900">React Interview Prep</h1>
+    <>
+      {/* Apply global styles from styled-components */}
+      <GlobalStyle />
+      
+      <div className="min-h-screen bg-gray-50">
+        <header className="bg-white shadow-sm">
+          <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div className="flex items-center">
+              <img src={reactLogo} className="h-10 w-10 animate-spin-slow" alt="React logo" />
+              <h1 className="ml-3 text-2xl font-bold text-gray-900">React Interview Prep</h1>
+            </div>
+            <a
+              href="https://github.com/Swamy-s-Tech-Skills-Academy/learn-reactjs/tree/main/react-samples"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 hover:text-gray-700 text-sm flex items-center"
+            >
+              <FontAwesomeIcon icon={faGithub} className="mr-1" />
+              GitHub
+            </a>
           </div>
-          <a
-            href="https://github.com/Swamy-s-Tech-Skills-Academy/learn-reactjs/tree/main/react-samples"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-500 hover:text-gray-700 text-sm flex items-center"
-          >
-            <FontAwesomeIcon icon={faGithub} className="mr-1" />
-            GitHub
-          </a>
-        </div>
-      </header>
+        </header>
 
-      <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* React Fundamentals */}
-          <CategoryCard
-            icon={faCode}
-            title="React Fundamentals"
-            description="Components, props, state, and lifecycle methods"
-            items={[
-              { name: "Component Types", path: "/components/types" },
-              { name: "Props & State", path: "/components/props-state" },
-              { name: "Conditional Rendering", path: "/components/conditional-rendering" },
-              { name: "Lists & Keys", path: "/components/lists-keys" },
-            ]}
-          />
+        <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* React Fundamentals */}
+            <CategoryCard
+              icon={faCode}
+              title="React Fundamentals"
+              description="Components, props, state, and lifecycle methods"
+              items={[
+                { name: "Component Types", path: "/components/types" },
+                { name: "Props & State", path: "/components/props-state" },
+                { name: "Conditional Rendering", path: "/components/conditional-rendering" },
+                { name: "Lists & Keys", path: "/components/lists-keys" },
+              ]}
+            />
 
-          {/* React Hooks */}
-          <CategoryCard
-            icon={faCog}
-            title="React Hooks"
-            description="Explore React's built-in hooks and custom hook patterns"
-            items={[
-              { name: "useState", path: "/hooks/use-state" },
-              { name: "useEffect", path: "/hooks/use-effect" },
-              { name: "useContext", path: "/hooks/use-context" },
-              { name: "useMemo & useCallback", path: "/hooks/use-memo-callback" },
-              { name: "Custom Hooks", path: "/hooks/custom-hooks" },
-            ]}
-          />
+            {/* React Hooks */}
+            <CategoryCard
+              icon={faCog}
+              title="React Hooks"
+              description="Explore React's built-in hooks and custom hook patterns"
+              items={[
+                { name: "useState", path: "/hooks/use-state" },
+                { name: "useEffect", path: "/hooks/use-effect" },
+                { name: "useContext", path: "/hooks/use-context" },
+                { name: "useMemo & useCallback", path: "/hooks/use-memo-callback" },
+                { name: "Custom Hooks", path: "/hooks/custom-hooks" },
+              ]}
+            />
 
-          {/* React Patterns */}
-          <CategoryCard
-            icon={faPuzzlePiece}
-            title="React Patterns"
-            description="Common patterns used in React applications"
-            items={[
-              { name: "Render Props", path: "/patterns/render-props" },
-              { name: "HOC (Higher Order Components)", path: "/patterns/hoc" },
-              { name: "Compound Components", path: "/patterns/compound-components" },
-              { name: "Context + Reducer", path: "/patterns/context-reducer" },
-            ]}
-          />
+            {/* React Patterns */}
+            <CategoryCard
+              icon={faPuzzlePiece}
+              title="React Patterns"
+              description="Common patterns used in React applications"
+              items={[
+                { name: "Render Props", path: "/patterns/render-props" },
+                { name: "HOC (Higher Order Components)", path: "/patterns/hoc" },
+                { name: "Compound Components", path: "/patterns/compound-components" },
+                { name: "Context + Reducer", path: "/patterns/context-reducer" },
+              ]}
+            />
 
-          {/* Performance Optimization */}
-          <CategoryCard
-            icon={faRocket}
-            title="Performance Optimization"
-            description="Techniques to optimize React performance"
-            items={[
-              { name: "Memoization", path: "/performance/memoization" },
-              { name: "Code Splitting", path: "/performance/code-splitting" },
-              { name: "Virtualization", path: "/performance/virtualization" },
-              { name: "React.memo", path: "/performance/react-memo" },
-            ]}
-          />
+            {/* Performance Optimization */}
+            <CategoryCard
+              icon={faRocket}
+              title="Performance Optimization"
+              description="Techniques to optimize React performance"
+              items={[
+                { name: "Memoization", path: "/performance/memoization" },
+                { name: "Code Splitting", path: "/performance/code-splitting" },
+                { name: "Virtualization", path: "/performance/virtualization" },
+                { name: "React.memo", path: "/performance/react-memo" },
+              ]}
+            />
 
-          {/* Form Handling */}
-          <CategoryCard
-            icon={faList}
-            title="Form Handling"
-            description="Best practices for forms in React"
-            items={[
-              { name: "Controlled Components", path: "/forms/controlled-components" },
-              { name: "Form Validation", path: "/forms/validation" },
-              { name: "Custom Form Hooks", path: "/forms/custom-hooks" },
-            ]}
-          />
+            {/* Form Handling */}
+            <CategoryCard
+              icon={faList}
+              title="Form Handling"
+              description="Best practices for forms in React"
+              items={[
+                { name: "Controlled Components", path: "/forms/controlled-components" },
+                { name: "Form Validation", path: "/forms/validation" },
+                { name: "Custom Form Hooks", path: "/forms/custom-hooks" },
+              ]}
+            />
 
-          {/* Interview Challenges */}
-          <CategoryCard
-            icon={faLaptop}
-            title="Interview Challenges"
-            description="Common coding challenges from React interviews"
-            items={[
-              { name: "To-Do List", path: "/challenges/todo-list" },
-              { name: "Infinite Scroll", path: "/challenges/infinite-scroll" },
-              { name: "Debounced Search", path: "/challenges/debounced-search" },
-              { name: "Modal Dialog", path: "/challenges/modal-dialog" },
-            ]}
-          />
-        </div>
-      </main>
+            {/* Interview Challenges */}
+            <CategoryCard
+              icon={faLaptop}
+              title="Interview Challenges"
+              description="Common coding challenges from React interviews"
+              items={[
+                { name: "To-Do List", path: "/challenges/todo-list" },
+                { name: "Infinite Scroll", path: "/challenges/infinite-scroll" },
+                { name: "Debounced Search", path: "/challenges/debounced-search" },
+                { name: "Modal Dialog", path: "/challenges/modal-dialog" },
+              ]}
+            />
+          </div>
+        </main>
 
-      <footer className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 border-t border-gray-200 mt-12">
-        <p className="text-center text-gray-500 text-sm">
-          React Interview Prep Examples - Built with React, TypeScript, and Tailwind CSS
-        </p>
-      </footer>
-    </div>
+        <footer className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 border-t border-gray-200 mt-12">
+          <p className="text-center text-gray-500 text-sm">
+            React Interview Prep Examples - Built with React, TypeScript, and Tailwind CSS
+          </p>
+        </footer>
+      </div>
+    </>
   )
 }
 
