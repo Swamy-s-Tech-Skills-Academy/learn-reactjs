@@ -17,6 +17,8 @@ import {
 
 // Import the GlobalStyle component
 import GlobalStyle from './styles/GlobalStyle'
+// Import the StyledComponentsExample component
+import StyledComponentsExample from './components/StyledComponentsExample'
 
 function App() {
   return (
@@ -44,6 +46,9 @@ function App() {
         </header>
 
         <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+          {/* Add the StyledComponentsExample at the top of the main content */}
+          <StyledComponentsExample />
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* React Fundamentals */}
             <CategoryCard
