@@ -187,61 +187,12 @@ module.exports = {
 
 ## Common Issues and Solutions
 
-### Styles Not Appearing
-
-If expected styles aren't showing up:
-- Verify the content array includes all necessary files
-- Check for proper loading of the CSS file in your application
-- Make sure classes are spelled correctly with complete prefixes
-
-### Build Performance
-
-If builds are slow with Tailwind:
-- Ensure you're using Tailwind 3.x with the JIT engine
-- Limit the scope of your content configuration
-- Consider using a more specific glob pattern for your content paths
-
-### IDE Support
-
-For better developer experience:
-- Install Tailwind CSS IntelliSense plugin for VS Code
-- Add a proper JSDoc type annotation to your Tailwind config
-
-### Conflicting Styles
-
-If Tailwind conflicts with other styles:
-- Consider using the `prefix` option
-- Use `!important` when necessary (with the `!` prefix, e.g., `!mt-4`)
-- Configure proper CSS cascade order in your build process
+// ...existing code...
 
 ## Using with React Components
 
-In React components, Tailwind classes are applied directly to JSX elements:
-
-```tsx
-function Button({ children, primary = false }) {
-  return (
-    <button
-      className={`
-        px-4 py-2 rounded font-bold
-        ${primary ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'}
-      `}
-    >
-      {children}
-    </button>
-  );
-}
-```
+// ...existing code...
 
 ## Integration with TypeScript
 
-Tailwind works seamlessly with TypeScript in React projects, but you may want to add proper type safety for custom theme values:
-
-```ts
-// tailwind.d.ts
-import 'tailwindcss/tailwind.css';
-
-declare module 'tailwindcss/tailwind.css' {
-  // Custom type definitions can go here
-}
-```
+// ...existing code...
