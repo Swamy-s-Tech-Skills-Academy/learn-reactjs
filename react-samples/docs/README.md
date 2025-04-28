@@ -107,6 +107,46 @@ For a comprehensive guide to our TypeScript setup, please see the [TypeScript Co
    yarn
    ```
 
+### Manual Dependency Installation
+
+If you're setting up the project from scratch or need to install specific dependency groups, you can use these commands:
+
+#### Core Dependencies
+```bash
+# React ecosystem
+npm install react@19 react-dom@19
+
+# Font Awesome
+npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/free-regular-svg-icons @fortawesome/free-brands-svg-icons @fortawesome/react-fontawesome
+```
+
+#### Development Dependencies
+```bash
+# Build tools
+npm install --save-dev vite @vitejs/plugin-react
+
+# TypeScript and type definitions
+npm install --save-dev typescript @types/react @types/react-dom
+
+# CSS Processing
+npm install --save-dev tailwindcss postcss autoprefixer
+
+# Linting and code quality
+npm install --save-dev eslint @eslint/js eslint-plugin-react-hooks eslint-plugin-react-refresh typescript-eslint globals
+
+# Testing
+npm install --save-dev jest ts-jest jest-environment-jsdom @types/jest @testing-library/react @testing-library/jest-dom @testing-library/user-event identity-obj-proxy
+```
+
+#### All Dependencies in One Command
+```bash
+# Core dependencies
+npm install react@19 react-dom@19 @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/free-regular-svg-icons @fortawesome/free-brands-svg-icons @fortawesome/react-fontawesome
+
+# Dev dependencies
+npm install --save-dev vite @vitejs/plugin-react typescript @types/react @types/react-dom tailwindcss postcss autoprefixer eslint @eslint/js eslint-plugin-react-hooks eslint-plugin-react-refresh typescript-eslint globals jest ts-jest jest-environment-jsdom @types/jest @testing-library/react @testing-library/jest-dom @testing-library/user-event identity-obj-proxy
+```
+
 ### Running the Development Server
 
 ```bash
@@ -141,6 +181,90 @@ react-samples/
 - `npm run build` - Build for production
 - `npm run lint` - Run ESLint
 - `npm run preview` - Preview production build locally
+
+## Installed Packages
+
+This project uses a variety of packages for development, UI, testing, and tooling. Here's a breakdown of all packages installed:
+
+### Core Dependencies
+
+- **React Ecosystem**
+  - `react` (v19.0.0): The core React library with the latest features and improvements
+  - `react-dom` (v19.0.0): React package for working with the DOM
+
+- **Font Awesome Integration**
+  - `@fortawesome/fontawesome-svg-core` (v6.7.2): Core library for Font Awesome
+  - `@fortawesome/free-solid-svg-icons` (v6.7.2): Solid style icons from Font Awesome
+  - `@fortawesome/free-regular-svg-icons` (v6.7.2): Regular style icons from Font Awesome
+  - `@fortawesome/free-brands-svg-icons` (v6.7.2): Brand icons from Font Awesome
+  - `@fortawesome/react-fontawesome` (v0.2.2): Font Awesome React component
+
+### Development Dependencies
+
+- **Build Tools**
+  - `vite` (v6.3.1): Next generation frontend tooling for faster development
+  - `@vitejs/plugin-react` (v4.3.4): Official React plugin for Vite
+
+- **TypeScript and Type Definitions**
+  - `typescript` (v5.7.2): TypeScript language support
+  - `@types/react` (v19.0.10): TypeScript definitions for React
+  - `@types/react-dom` (v19.0.4): TypeScript definitions for React DOM
+
+- **CSS Processing**
+  - `tailwindcss` (v3.4.17): Utility-first CSS framework
+  - `postcss` (v8.5.3): Tool for transforming CSS with JavaScript plugins
+  - `autoprefixer` (v10.4.21): PostCSS plugin to parse CSS and add vendor prefixes
+
+- **Linting and Code Quality**
+  - `eslint` (v9.22.0): Linting utility for JavaScript and TypeScript
+  - `@eslint/js` (v9.22.0): ESLint's official JavaScript integration
+  - `eslint-plugin-react-hooks` (v5.2.0): React hooks specific linting rules
+  - `eslint-plugin-react-refresh` (v0.4.19): ESLint plugin for React Refresh
+  - `typescript-eslint` (v8.26.1): TypeScript ESLint parser, plugin, and configs
+  - `globals` (v16.0.0): Declare global variables for ESLint
+
+- **Testing**
+  - `jest` (v29.7.0): Delightful JavaScript testing framework
+  - `ts-jest` (v29.1.2): TypeScript preprocessor for Jest
+  - `jest-environment-jsdom` (v29.7.0): JSDOM environment for Jest
+  - `@types/jest` (v29.5.12): TypeScript definitions for Jest
+  - `@testing-library/react` (v15.0.0): Testing utilities for React
+  - `@testing-library/jest-dom` (v6.4.0): Custom Jest matchers for DOM testing
+  - `@testing-library/user-event` (v14.5.2): Simulates user events for testing
+  - `identity-obj-proxy` (v3.0.0): Mock CSS modules for Jest
+
+### Key Features of Our Package Configuration
+
+1. **Modern React Development**: Using React 19, the latest version with improved performance and features
+
+2. **TypeScript Integration**: Full TypeScript support for type safety and better developer experience
+
+3. **Fast Build System**: Leveraging Vite's blazing-fast HMR and optimized build process
+
+4. **Comprehensive Testing Suite**: Jest configured with React Testing Library for component testing
+
+5. **Strong Linting**: ESLint setup with specialized plugins for React and TypeScript
+
+6. **Utility-First CSS**: Tailwind CSS integration for rapid UI development
+
+7. **Icon System**: Font Awesome integration for a comprehensive icon library
+
+### Testing Configuration
+
+The Jest testing setup includes:
+
+- **Test Environment**: JSDOM for browser-like testing environment
+- **TypeScript Support**: ts-jest for TypeScript processing in tests
+- **File Matching**: Tests files with `.test.ts`, `.test.tsx`, `.spec.ts`, `.spec.tsx` or any files in `__tests__` directories
+- **Module Mocking**: CSS and other asset imports are properly mocked
+- **Setup File**: Global test setup in `jest.setup.ts`
+
+Run tests with:
+```bash
+npm test             # Run all tests
+npm run test:watch   # Run tests in watch mode
+npm run test:coverage # Generate coverage report
+```
 
 ## Technologies Used
 
