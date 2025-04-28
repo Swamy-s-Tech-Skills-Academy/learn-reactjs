@@ -10,7 +10,28 @@ I am learning React.js from different Video Courses, Books, and Websites.
 > 1. <https://vite.dev/>
 > 1. <https://nextjs.org/docs>
 
-## Project Setup
+## React-Samples Project Setup
+
+```powershell
+npm create vite@latest
+npm create vite@latest react-samples
+
+npm install -D tailwindcss@3 postcss autoprefixer
+npx tailwindcss init -p
+```
+
+## Trouble shooting
+
+```powershell
+Remove-Item -Recurse -Force node_modules
+Remove-Item package-lock.json
+
+npm install
+
+Get-ChildItem .\node_modules\.bin\
+```
+
+## React-Heros Project Setup
 
 ```powershell
 npm create vite@latest
