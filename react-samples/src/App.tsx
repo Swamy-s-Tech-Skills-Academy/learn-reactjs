@@ -3,13 +3,17 @@ import './App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
   faCode, 
-  faHook, 
+  faCog,
   faPuzzlePiece, 
   faRocket, 
-  faWpforms, 
-  faLaptopCode,
-  faGithub
+  faList, // Replacing faWpforms
+  faLaptop, // Replacing faLaptopCode
+  faArrowRight
 } from '@fortawesome/free-solid-svg-icons'
+
+import {
+  faGithub
+} from '@fortawesome/free-brands-svg-icons'
 
 function App() {
   return (
@@ -49,7 +53,7 @@ function App() {
           
           {/* React Hooks */}
           <CategoryCard 
-            icon={faHook}
+            icon={faCog}
             title="React Hooks" 
             description="Explore React's built-in hooks and custom hook patterns"
             items={[
@@ -89,7 +93,7 @@ function App() {
           
           {/* Form Handling */}
           <CategoryCard 
-            icon={faWpforms}
+            icon={faList}
             title="Form Handling" 
             description="Best practices for forms in React"
             items={[
@@ -101,7 +105,7 @@ function App() {
           
           {/* Interview Challenges */}
           <CategoryCard 
-            icon={faLaptopCode}
+            icon={faLaptop}
             title="Interview Challenges" 
             description="Common coding challenges from React interviews"
             items={[
@@ -149,7 +153,7 @@ function CategoryCard({ icon, title, description, items }: CategoryCardProps) {
                   href={item.path} 
                   className="block text-indigo-600 hover:text-indigo-900 hover:bg-gray-50 -m-2 p-2 rounded flex items-center"
                 >
-                  <FontAwesomeIcon icon="arrow-right" className="mr-2 text-xs" />
+                  <FontAwesomeIcon icon={faArrowRight} className="mr-2 text-xs" />
                   {item.name}
                 </a>
               </li>
