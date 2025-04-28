@@ -148,7 +148,7 @@ function CategoryCard({ icon, title, description, items }: CategoryCardProps) {
                 <a 
                   href={item.path} 
                   className="block text-indigo-600 hover:text-indigo-900 hover:bg-gray-50 -m-2 p-2 rounded flex items-center"
-                ></a>
+                >
                   <FontAwesomeIcon icon="arrow-right" className="mr-2 text-xs" />
                   {item.name}
                 </a>
