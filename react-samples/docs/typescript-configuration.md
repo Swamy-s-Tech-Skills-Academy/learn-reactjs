@@ -1,6 +1,6 @@
 # TypeScript Configuration Documentation
 
-This document provides an overview of the TypeScript configuration used in the React Samples project, explaining key settings and their purpose.
+This document provides an overview of the TypeScript configuration used in the React Samples project, explaining key settings and their purpose. For a general project overview, see the [README](./README.md), or for Tailwind CSS configuration details, see the [Tailwind Configuration Guide](./tailwind-configuration.md).
 
 ## Configuration Structure
 

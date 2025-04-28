@@ -15,7 +15,17 @@ This repository covers:
 - Form handling and validation
 - Testing React components
 
+## Documentation Structure
+
+This documentation folder contains:
+
+- **README.md** (this file): Project overview and general information
+- **[typescript-configuration.md](./typescript-configuration.md)**: Detailed explanation of TypeScript configuration
+- **[tailwind-configuration.md](./tailwind-configuration.md)**: In-depth guide to Tailwind CSS integration
+
 ## Tailwind CSS Integration with Vite
+
+For a detailed explanation of Tailwind CSS integration, please see the [Tailwind Configuration Guide](./tailwind-configuration.md).
 
 This project demonstrates the proper way to integrate Tailwind CSS with a Vite React application. Here are the key points to understand:
 
@@ -71,6 +81,10 @@ This project demonstrates the proper way to integrate Tailwind CSS with a Vite R
 - **Simpler configuration**: Fewer moving parts means fewer potential points of failure.
 - **Official method**: This is the approach recommended in the official Tailwind CSS documentation.
 - **Better performance**: The PostCSS integration is optimized for efficiency.
+
+## TypeScript Configuration
+
+For a comprehensive guide to our TypeScript setup, please see the [TypeScript Configuration Guide](./typescript-configuration.md).
 
 ## Getting Started
 

@@ -1,6 +1,6 @@
 # Tailwind CSS Configuration Documentation
 
-This document provides an overview of the Tailwind CSS configuration used in the React Samples project, explaining key settings and integration with Vite.
+This document provides an overview of the Tailwind CSS configuration used in the React Samples project, explaining key settings and integration with Vite. For a general project overview, see the [README](./README.md), or for TypeScript configuration details, see the [TypeScript Configuration Guide](./typescript-configuration.md).
 
 ## Integration with Vite
 
