@@ -22,6 +22,7 @@ This documentation folder contains:
 - **README.md** (this file): Project overview and general information
 - **[typescript-configuration.md](./typescript-configuration.md)**: Detailed explanation of TypeScript configuration
 - **[tailwind-configuration.md](./tailwind-configuration.md)**: In-depth guide to Tailwind CSS integration
+- **[styling-approaches.md](./styling-approaches.md)**: Comparison of Tailwind CSS and styled-components approaches
 
 ## Tailwind CSS Integration with Vite
 
