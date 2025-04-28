@@ -15,12 +15,14 @@ import {
   faBars,
   faUser,
   faCode,
+  faAtom  // Using faAtom instead of faReact (which doesn't exist in free-solid)
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
   faGithub,
   faLinkedin,
-  faTwitter
+  faTwitter,
+  faReact  // faReact is actually in the brands package, not solid
 } from '@fortawesome/free-brands-svg-icons';
 
 /**
@@ -54,11 +56,13 @@ library.add(
   faBars,
   faUser,
   faCode,
+  faAtom,  // Added faAtom
   
   // Brand icons
   faGithub,
   faLinkedin,
-  faTwitter
+  faTwitter,
+  faReact  // Moved faReact to the brand icons section
 );
 
 // Export the configured library
