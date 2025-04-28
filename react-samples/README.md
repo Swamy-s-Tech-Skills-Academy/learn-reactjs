@@ -1,6 +1,19 @@
-# React Samples
+# React Interview Samples
 
-This project contains a collection of React code samples built with TypeScript and Vite. It's designed to showcase various React patterns, components, and best practices.
+This project contains a collection of React code samples built with TypeScript and Vite, specifically designed to help prepare for React technical interviews. It showcases various React patterns, components, and best practices that commonly appear in technical interviews.
+
+## Interview Preparation Focus Areas
+
+This repository covers:
+
+- React fundamentals (components, props, state)
+- Hooks (useState, useEffect, useContext, useRef, useMemo, useCallback)
+- State management techniques
+- Performance optimization
+- Common coding challenges
+- Component communication patterns
+- Form handling and validation
+- Testing React components
 
 ## Getting Started
 
@@ -41,10 +54,13 @@ react-samples/
 ├── src/
 │   ├── assets/        # Images, fonts, etc.
 │   ├── components/    # Reusable components
+│   ├── hooks/         # Custom hooks examples
+│   ├── patterns/      # Common React patterns
+│   ├── challenges/    # Interview coding challenges
 │   ├── App.tsx        # Main application component
 │   ├── main.tsx       # Application entry point
-│   └── index.css      # Global styles
-├── index.html         # HTML template
+│   └── index.css      # Global styles with Tailwind
+├── index.html         # HTML template with Inter font
 └── ...configuration files
 ```
 
@@ -62,6 +78,18 @@ react-samples/
 - [Vite](https://vitejs.dev/) - Build tool
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 - [ESLint](https://eslint.org/) - Code linting
+- [Inter Font](https://fonts.google.com/specimen/Inter) - Modern sans-serif typeface
+
+## Common Interview Topics Covered
+
+- Component lifecycle and hooks
+- State management (local state, context, reducers)
+- Performance optimization (memoization, virtualization)
+- Form handling and validation
+- Async operations and data fetching
+- Routing concepts
+- Testing strategies
+- Common React patterns
 
 ## About Vite
 
@@ -74,49 +102,7 @@ Currently, two official plugins are available:
 
 ## ESLint Configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    "react-x": reactX,
-    "react-dom": reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs["recommended-typescript"].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
-```
+// ...existing code...
 
 ## License
 
