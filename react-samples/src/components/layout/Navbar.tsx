@@ -92,7 +92,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme = 'default' }) => {
 
   return (
     <header className={getThemeClasses()}>
-      <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8 flex items-center justify-between">
         <div className="flex items-center">
           <img 
             src={reactLogo} 
