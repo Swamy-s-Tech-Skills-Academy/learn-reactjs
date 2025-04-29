@@ -1,10 +1,11 @@
 import './App.css'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 
 // Import the GlobalStyle component
 import GlobalStyle from './styles/GlobalStyle'
-// Import the Navbar and Footer components from layout folder
+// Import the layout components
 import Navbar from './components/layout/Navbar'
+import Sidebar from './components/layout/Sidebar'
 import Footer from './components/layout/Footer'
 // Import page components
 import Home from './pages/Home'
@@ -72,6 +73,10 @@ const ChallengesPage = () => (
 );
 
 function App() {
+  const location = useLocation();
+  // Only show sidebar on pages other than the homepage
+  const showSidebar = location.pathname !== '/';
+
   return (
     <>
       {/* Apply global styles from styled-components */}
@@ -81,20 +86,31 @@ function App() {
         {/* Navbar at the top */}
         <Navbar theme="blue" />
 
-        {/* Routes configuration */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/fundamentals/*" element={<FundamentalsPage />} />
-          {/* Keep old route for backward compatibility */}
-          <Route path="/components/*" element={<FundamentalsPage />} />
-          <Route path="/hooks/*" element={<HooksPage />} />
-          <Route path="/patterns/*" element={<PatternsPage />} />
-          <Route path="/performance/*" element={<PerformancePage />} />
-          <Route path="/forms/*" element={<FormsPage />} />
-          <Route path="/challenges" element={<ChallengesPage />} />
-          <Route path="/challenges/debounced-search" element={<DebouncedSearch />} />
-          <Route path="/styling-demo" element={<StyledComponentsExample />} />
-        </Routes>
+        {/* Main content area with sidebar */}
+        <div className="flex">
+          {/* Dynamic sidebar - only shown when not on homepage */}
+          {showSidebar && (
+            <Sidebar className="h-screen sticky top-0 pt-6" />
+          )}
+
+          {/* Main content - full width on homepage, partial width on other pages */}
+          <main className={`flex-1 ${showSidebar ? 'max-w-5xl' : 'max-w-7xl mx-auto'}`}>
+            {/* Routes configuration */}
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/fundamentals/*" element={<FundamentalsPage />} />
+              {/* Keep old route for backward compatibility */}
+              <Route path="/components/*" element={<FundamentalsPage />} />
+              <Route path="/hooks/*" element={<HooksPage />} />
+              <Route path="/patterns/*" element={<PatternsPage />} />
+              <Route path="/performance/*" element={<PerformancePage />} />
+              <Route path="/forms/*" element={<FormsPage />} />
+              <Route path="/challenges" element={<ChallengesPage />} />
+              <Route path="/challenges/debounced-search" element={<DebouncedSearch />} />
+              <Route path="/styling-demo" element={<StyledComponentsExample />} />
+            </Routes>
+          </main>
+        </div>
 
         {/* Footer at the bottom */}
         <Footer />
