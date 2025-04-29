@@ -168,7 +168,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme = 'default' }) => {
                 alt="React logo" 
               />
             </Link>
-            <Link to="/" className={`ml-3 text-xl font-bold ${getTextClasses()} no-underline`}>
+            <Link to="/" className={`ml-3 text-md font-bold ${getTextClasses()} no-underline`}>
               React Interview Prep
             </Link>
           </div>
