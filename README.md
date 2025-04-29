@@ -1,53 +1,45 @@
-# Learn React.js
+# React Learning Projects
 
-I am learning React.js from different Video Courses, Books, and Websites.
+This repository contains a collection of React projects built with TypeScript, Vite, and Tailwind CSS, designed to help developers learn React and prepare for technical interviews.
 
-## Reference(s)
+## Projects
 
-> 1. <https://v3.tailwindcss.com/docs/guides/vite>
-> 1. <https://react.dev/learn>
-> 1. <https://tailwindcss.com/>
-> 1. <https://vite.dev/>
-> 1. <https://nextjs.org/docs>
+### React Samples
 
-## React-Samples Project Setup
+A comprehensive collection of React code samples covering various patterns, components, hooks, and best practices that are commonly tested in technical interviews.
 
-```powershell
-npm create vite@latest
-npm create vite@latest react-samples
+- [View Documentation](./react-samples/docs/README.md)
+- [View Code](./react-samples)
 
-npm install -D tailwindcss@3 postcss autoprefixer
-npx tailwindcss init -p
-```
+### React Heroes
 
-## Trouble shooting
+A practical React application demonstrating real-world implementation patterns and solutions.
 
-```powershell
-Remove-Item -Recurse -Force node_modules
-Remove-Item package-lock.json
+- [View Documentation](./react-heroes/README.md)
+- [View Code](./react-heroes)
 
-npm install
+## Getting Started
 
-Get-ChildItem .\node_modules\.bin\
-```
+Each project contains its own README with specific instructions for running and exploring that project. Navigate to the project folders to learn more.
 
-## React-Heros Project Setup
+## Documentation
 
-```powershell
-npm create vite@latest
-npm create vite@latest react-heroes
+Comprehensive documentation for the React Samples project is available in the [docs folder](./react-samples/docs/).
 
-npm install -D tailwindcss@3 postcss autoprefixer
-npx tailwindcss init -p
-```
+This includes:
 
-## Trouble shooting
+- [Project Overview](./react-samples/docs/README.md)
+- [TypeScript Configuration Guide](./react-samples/docs/typescript-configuration.md)
+- [Tailwind CSS Integration Guide](./react-samples/docs/tailwind-configuration.md)
 
-```powershell
-Remove-Item -Recurse -Force node_modules
-Remove-Item package-lock.json
+## Technologies Used
 
-npm install
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [ESLint](https://eslint.org/)
 
-Get-ChildItem .\node_modules\.bin\
-```
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
