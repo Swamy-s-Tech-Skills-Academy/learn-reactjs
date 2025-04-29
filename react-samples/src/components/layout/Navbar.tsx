@@ -38,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme = 'default' }) => {
   // Navigation menu items
   const menuItems = [
     { id: 'home', label: 'Home', icon: faReact, path: '/' },
-    { id: 'fundamentals', label: 'Fundamentals', icon: faCode, path: '/components' },
+    { id: 'fundamentals', label: 'Fundamentals', icon: faCode, path: '/fundamentals' },
     { id: 'hooks', label: 'Hooks', icon: faCog, path: '/hooks' },
     { id: 'patterns', label: 'Patterns', icon: faPuzzlePiece, path: '/patterns' },
     { id: 'performance', label: 'Performance', icon: faRocket, path: '/performance' },
