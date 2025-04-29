@@ -9,9 +9,6 @@ import {
   faArrowRight
 } from '@fortawesome/free-solid-svg-icons'
 
-// Import StyledComponentsExample
-import StyledComponentsExample from '../components/StyledComponentsExample'
-
 interface CategoryCardProps {
   icon: any;
   title: string;
@@ -53,9 +50,6 @@ function CategoryCard({ icon, title, description, items }: CategoryCardProps) {
 function Home() {
   return (
     <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-      {/* Add the StyledComponentsExample at the top of the main content */}
-      <StyledComponentsExample />
-
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* React Fundamentals */}
         <CategoryCard

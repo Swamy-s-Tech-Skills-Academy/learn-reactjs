@@ -179,21 +179,22 @@ const Navbar: React.FC<NavbarProps> = ({ theme = 'default' }) => {
           </div>
           
           <div className="flex items-center">
-            <a
-              href="https://github.com/Swamy-s-Tech-Skills-Academy/learn-reactjs/tree/main/react-samples"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${getLinkClasses()} text-sm flex items-center`}
-            >
-              <FontAwesomeIcon icon={faGithub} className="mr-1" />
-              GitHub
-            </a>
-            
             {/* Login button */}
             <button className={getLoginButtonClasses()}>
               <FontAwesomeIcon icon={faRightToBracket} className="mr-1.5" />
               Login
             </button>
+            
+            {/* GitHub link placed after Login button */}
+            <a
+              href="https://github.com/Swamy-s-Tech-Skills-Academy/learn-reactjs/tree/main/react-samples"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`ml-4 ${getLinkClasses()} text-sm flex items-center`}
+            >
+              <FontAwesomeIcon icon={faGithub} className="mr-1" />
+              GitHub
+            </a>
           </div>
         </div>
       </div>
