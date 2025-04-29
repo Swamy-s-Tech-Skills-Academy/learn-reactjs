@@ -1,4 +1,3 @@
-import reactLogo from './assets/react.svg'
 import './App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -10,10 +9,6 @@ import {
   faLaptop, // Replacing faLaptopCode
   faArrowRight
 } from '@fortawesome/free-solid-svg-icons'
-
-import {
-  faGithub
-} from '@fortawesome/free-brands-svg-icons'
 
 // Import the GlobalStyle component
 import GlobalStyle from './styles/GlobalStyle'
