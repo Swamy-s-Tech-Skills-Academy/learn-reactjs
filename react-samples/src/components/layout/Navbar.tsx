@@ -12,63 +12,63 @@ const Navbar: React.FC<NavbarProps> = ({ theme = 'default' }) => {
     switch (theme) {
       // Blues
       case 'blue':
-        return 'bg-blue-500 text-white shadow-lg';
+        return 'bg-blue-400 text-white shadow-lg';
       case 'sky':
-        return 'bg-sky-500 text-white shadow-lg';
+        return 'bg-sky-400 text-white shadow-lg';
       case 'indigo':
-        return 'bg-indigo-500 text-white shadow-lg';
+        return 'bg-indigo-400 text-white shadow-lg';
         
       // Purples
       case 'violet':
-        return 'bg-violet-500 text-white shadow-lg';
+        return 'bg-violet-400 text-white shadow-lg';
       case 'purple':
-        return 'bg-purple-500 text-white shadow-lg';
+        return 'bg-purple-400 text-white shadow-lg';
       case 'fuchsia':
-        return 'bg-fuchsia-500 text-white shadow-lg';
+        return 'bg-fuchsia-400 text-white shadow-lg';
         
       // Pinks
       case 'pink':
-        return 'bg-pink-500 text-white shadow-lg';
+        return 'bg-pink-400 text-white shadow-lg';
       case 'rose':
-        return 'bg-rose-500 text-white shadow-lg';
+        return 'bg-rose-400 text-white shadow-lg';
         
       // Reds & Oranges
       case 'red':
-        return 'bg-red-500 text-white shadow-lg';
+        return 'bg-red-400 text-white shadow-lg';
       case 'orange':
-        return 'bg-orange-500 text-white shadow-lg';
+        return 'bg-orange-400 text-white shadow-lg';
         
       // Yellows
       case 'amber':
-        return 'bg-amber-500 text-white shadow-lg';
+        return 'bg-amber-400 text-white shadow-lg';
       case 'yellow':
-        return 'bg-yellow-500 text-white shadow-lg';
+        return 'bg-yellow-400 text-white shadow-lg';
         
       // Greens
       case 'lime':
-        return 'bg-lime-500 text-white shadow-lg';
+        return 'bg-lime-400 text-white shadow-lg';
       case 'green':
-        return 'bg-green-500 text-white shadow-lg';
+        return 'bg-green-400 text-white shadow-lg';
       case 'emerald':
-        return 'bg-emerald-500 text-white shadow-lg';
+        return 'bg-emerald-400 text-white shadow-lg';
       case 'teal':
-        return 'bg-teal-500 text-white shadow-lg';
+        return 'bg-teal-400 text-white shadow-lg';
         
       // Cyans
       case 'cyan':
-        return 'bg-cyan-500 text-white shadow-lg';
+        return 'bg-cyan-400 text-white shadow-lg';
         
       // Grays
       case 'slate':
-        return 'bg-slate-500 text-white shadow-lg';
+        return 'bg-slate-400 text-white shadow-lg';
       case 'gray':
-        return 'bg-gray-500 text-white shadow-lg';
+        return 'bg-gray-400 text-white shadow-lg';
       case 'zinc':
-        return 'bg-zinc-500 text-white shadow-lg';
+        return 'bg-zinc-400 text-white shadow-lg';
       case 'neutral':
-        return 'bg-neutral-500 text-white shadow-lg';
+        return 'bg-neutral-400 text-white shadow-lg';
       case 'stone':
-        return 'bg-stone-500 text-white shadow-lg';
+        return 'bg-stone-400 text-white shadow-lg';
         
       // Default (white)
       default:
