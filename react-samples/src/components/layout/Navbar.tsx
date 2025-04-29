@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faGithub,
@@ -20,7 +21,19 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ theme = 'default' }) => {
-  const [activeMenu, setActiveMenu] = useState<string | null>('home');
+  const location = useLocation();
+  const [activeMenu, setActiveMenu] = useState<string | null>(() => {
+    // Set initial active menu based on current path
+    const path = location.pathname;
+    if (path === '/') return 'home';
+    if (path.startsWith('/components')) return 'fundamentals';
+    if (path.startsWith('/hooks')) return 'hooks';
+    if (path.startsWith('/patterns')) return 'patterns';
+    if (path.startsWith('/performance')) return 'performance';
+    if (path.startsWith('/forms')) return 'forms';
+    if (path.startsWith('/challenges')) return 'challenges';
+    return 'home';
+  });
 
   // Navigation menu items
   const menuItems = [
@@ -148,32 +161,31 @@ const Navbar: React.FC<NavbarProps> = ({ theme = 'default' }) => {
       <div className="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <img 
-              src={reactLogo} 
-              className={`h-8 w-8 ${getLogoAnimationClass()}`} 
-              alt="React logo" 
-            />
-            <h1 className={`ml-3 text-xl font-bold ${getTextClasses()}`}>
+            <Link to="/">
+              <img 
+                src={reactLogo} 
+                className={`h-8 w-8 ${getLogoAnimationClass()}`} 
+                alt="React logo" 
+              />
+            </Link>
+            <Link to="/" className={`ml-3 text-xl font-bold ${getTextClasses()} no-underline`}>
               React Interview Prep
-            </h1>
+            </Link>
           </div>
           
           {/* Navigation menu */}
           <div className="hidden md:block">
             <nav className="flex space-x-1">
               {menuItems.map(item => (
-                <a
+                <Link
                   key={item.id}
-                  href={item.path}
+                  to={item.path}
                   className={getMenuItemClasses(item.id)}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleMenuClick(item.id);
-                  }}
+                  onClick={() => handleMenuClick(item.id)}
                 >
                   <FontAwesomeIcon icon={item.icon} className="mr-1.5" />
                   {item.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
