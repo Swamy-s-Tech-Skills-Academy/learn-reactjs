@@ -32,7 +32,7 @@ function App() {
       
       <div className="min-h-screen bg-gray-50">
         {/* Use the Navbar component with a theme */}
-        <Navbar theme="blue" />
+        <Navbar theme="amber" />
 
         <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
           {/* Add the StyledComponentsExample at the top of the main content */}

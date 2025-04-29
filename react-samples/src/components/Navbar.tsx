@@ -3,37 +3,74 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import reactLogo from '../assets/react.svg';
 
 interface NavbarProps {
-  theme?: 'blue' | 'green' | 'indigo' | 'purple' | 'cyan' | 'teal' | 'orange' | 'amber' | 'yellow' | 'emerald' | 'lime' | 'sky' | 'default';
+  theme?: 'blue' | 'green' | 'indigo' | 'violet' | 'purple' | 'fuchsia' | 'pink' | 'rose' | 'red' | 'orange' | 'amber' | 'yellow' | 'lime' | 'green' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'blue' | 'slate' | 'gray' | 'zinc' | 'neutral' | 'stone' | 'default';
 }
 
 const Navbar: React.FC<NavbarProps> = ({ theme = 'default' }) => {
   // Tailwind CSS color theme classes based on the theme prop
   const getThemeClasses = () => {
     switch (theme) {
+      // Blues
       case 'blue':
         return 'bg-blue-500 text-white shadow-lg';
-      case 'green':
-        return 'bg-green-500 text-white shadow-lg';
+      case 'sky':
+        return 'bg-sky-500 text-white shadow-lg';
       case 'indigo':
         return 'bg-indigo-500 text-white shadow-lg';
+        
+      // Purples
+      case 'violet':
+        return 'bg-violet-500 text-white shadow-lg';
       case 'purple':
         return 'bg-purple-500 text-white shadow-lg';
-      case 'cyan':
-        return 'bg-cyan-500 text-white shadow-lg';
-      case 'teal':
-        return 'bg-teal-500 text-white shadow-lg';
+      case 'fuchsia':
+        return 'bg-fuchsia-500 text-white shadow-lg';
+        
+      // Pinks
+      case 'pink':
+        return 'bg-pink-500 text-white shadow-lg';
+      case 'rose':
+        return 'bg-rose-500 text-white shadow-lg';
+        
+      // Reds & Oranges
+      case 'red':
+        return 'bg-red-500 text-white shadow-lg';
       case 'orange':
         return 'bg-orange-500 text-white shadow-lg';
+        
+      // Yellows
       case 'amber':
         return 'bg-amber-500 text-white shadow-lg';
       case 'yellow':
         return 'bg-yellow-500 text-white shadow-lg';
-      case 'emerald':
-        return 'bg-emerald-500 text-white shadow-lg';
+        
+      // Greens
       case 'lime':
         return 'bg-lime-500 text-white shadow-lg';
-      case 'sky':
-        return 'bg-sky-500 text-white shadow-lg';
+      case 'green':
+        return 'bg-green-500 text-white shadow-lg';
+      case 'emerald':
+        return 'bg-emerald-500 text-white shadow-lg';
+      case 'teal':
+        return 'bg-teal-500 text-white shadow-lg';
+        
+      // Cyans
+      case 'cyan':
+        return 'bg-cyan-500 text-white shadow-lg';
+        
+      // Grays
+      case 'slate':
+        return 'bg-slate-500 text-white shadow-lg';
+      case 'gray':
+        return 'bg-gray-500 text-white shadow-lg';
+      case 'zinc':
+        return 'bg-zinc-500 text-white shadow-lg';
+      case 'neutral':
+        return 'bg-neutral-500 text-white shadow-lg';
+      case 'stone':
+        return 'bg-stone-500 text-white shadow-lg';
+        
+      // Default (white)
       default:
         return 'bg-white shadow-sm';
     }
