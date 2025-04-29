@@ -62,10 +62,10 @@ function Home() {
           title="React Fundamentals"
           description="Components, props, state, and lifecycle methods"
           items={[
-            { name: "Component Types", path: "/components/types" },
-            { name: "Props & State", path: "/components/props-state" },
-            { name: "Conditional Rendering", path: "/components/conditional-rendering" },
-            { name: "Lists & Keys", path: "/components/lists-keys" },
+            { name: "Component Types", path: "/fundamentals/types" },
+            { name: "Props & State", path: "/fundamentals/props-state" },
+            { name: "Conditional Rendering", path: "/fundamentals/conditional-rendering" },
+            { name: "Lists & Keys", path: "/fundamentals/lists-keys" },
           ]}
         />
 

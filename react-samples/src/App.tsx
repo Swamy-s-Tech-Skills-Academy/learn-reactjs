@@ -84,6 +84,8 @@ function App() {
         {/* Routes configuration */}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/fundamentals/*" element={<FundamentalsPage />} />
+          {/* Keep old route for backward compatibility */}
           <Route path="/components/*" element={<FundamentalsPage />} />
           <Route path="/hooks/*" element={<HooksPage />} />
           <Route path="/patterns/*" element={<PatternsPage />} />

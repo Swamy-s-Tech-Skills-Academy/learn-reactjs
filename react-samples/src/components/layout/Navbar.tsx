@@ -26,7 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme = 'default' }) => {
     // Set initial active menu based on current path
     const path = location.pathname;
     if (path === '/') return 'home';
-    if (path.startsWith('/components')) return 'fundamentals';
+    if (path.startsWith('/fundamentals') || path.startsWith('/components')) return 'fundamentals';
     if (path.startsWith('/hooks')) return 'hooks';
     if (path.startsWith('/patterns')) return 'patterns';
     if (path.startsWith('/performance')) return 'performance';
