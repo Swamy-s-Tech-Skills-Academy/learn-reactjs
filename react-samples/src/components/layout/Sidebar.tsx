@@ -20,6 +20,15 @@ const navigationItems = {
     { name: 'Conditional Rendering', path: '/fundamentals/conditional-rendering', icon: faCode },
     { name: 'Lists & Keys', path: '/fundamentals/lists-keys', icon: faCode },
   ],
+  ch2: [
+    { name: 'BlogPostExample', path: '/ch2/blog-post', icon: faCode },
+    { name: 'CssSpecificityExample', path: '/ch2/css-specificity', icon: faCode },
+    { name: 'YouTubeApiExample', path: '/ch2/youtube-api', icon: faCode },
+    { name: 'DragAndDrop', path: '/ch2/drag-and-drop', icon: faCode },
+    { name: 'FormSimple', path: '/ch2/form-simple', icon: faCode },
+    { name: 'FormAdvanced', path: '/ch2/form-advanced', icon: faCode },
+    { name: 'Timer', path: '/ch2/timer', icon: faCode },
+  ],
   hooks: [
     { name: 'useState', path: '/hooks/use-state', icon: faCog },
     { name: 'useEffect', path: '/hooks/use-effect', icon: faCog },
@@ -56,6 +65,7 @@ const navigationItems = {
 const pathToSection = {
   '/fundamentals': 'fundamentals',
   '/components': 'fundamentals', // For backward compatibility
+  '/ch2': 'ch2',
   '/hooks': 'hooks',
   '/patterns': 'patterns',
   '/performance': 'performance',
@@ -100,6 +110,8 @@ const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
     switch (currentSection) {
       case 'fundamentals':
         return 'React Fundamentals';
+      case 'ch2':
+        return 'Chapter 2 Examples';
       case 'hooks':
         return 'React Hooks';
       case 'patterns':
