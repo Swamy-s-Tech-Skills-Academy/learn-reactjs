@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import reactLogo from '../assets/react.svg';
+import reactLogo from '../../assets/react.svg';
 
 interface NavbarProps {
   theme?: 'blue' | 'green' | 'indigo' | 'violet' | 'purple' | 'fuchsia' | 'pink' | 'rose' | 'red' | 'orange' | 'amber' | 'yellow' | 'lime' | 'green' | 'emerald' | 'teal' | 'cyan' | 'sky' | 'blue' | 'slate' | 'gray' | 'zinc' | 'neutral' | 'stone' | 'default';
