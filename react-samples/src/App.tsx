@@ -30,9 +30,49 @@ function App() {
       <GlobalStyle />
       
       <div className="min-h-screen bg-gray-50">
-        {/* Use the Navbar component with a theme */}
-        <Navbar theme="amber" />
-        <Navbar theme="rose" />
+        {/* Showcase all available Navbar themes */}
+        <div className="space-y-1">
+          {/* Default theme */}
+          <Navbar theme="default" />
+          
+          {/* Blues */}
+          <Navbar theme="blue" />
+          <Navbar theme="sky" />
+          <Navbar theme="indigo" />
+          
+          {/* Purples */}
+          <Navbar theme="violet" />
+          <Navbar theme="purple" />
+          <Navbar theme="fuchsia" />
+          
+          {/* Pinks & Roses */}
+          <Navbar theme="pink" />
+          <Navbar theme="rose" />
+          
+          {/* Reds & Oranges */}
+          <Navbar theme="red" />
+          <Navbar theme="orange" />
+          
+          {/* Yellows */}
+          <Navbar theme="amber" />
+          <Navbar theme="yellow" />
+          
+          {/* Greens */}
+          <Navbar theme="lime" />
+          <Navbar theme="green" />
+          <Navbar theme="emerald" />
+          <Navbar theme="teal" />
+          
+          {/* Cyans */}
+          <Navbar theme="cyan" />
+          
+          {/* Grays */}
+          <Navbar theme="slate" />
+          <Navbar theme="gray" />
+          <Navbar theme="zinc" />
+          <Navbar theme="neutral" />
+          <Navbar theme="stone" />
+        </div>
 
         <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
           {/* Add the StyledComponentsExample at the top of the main content */}
