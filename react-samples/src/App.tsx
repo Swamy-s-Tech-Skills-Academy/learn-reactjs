@@ -19,10 +19,9 @@ import {
 import GlobalStyle from './styles/GlobalStyle'
 // Import the StyledComponentsExample component
 import StyledComponentsExample from './components/StyledComponentsExample'
-// Import the new Navbar component
-import Navbar from './components/Navbar'
-// Import the new Footer component
-import Footer from './components/Footer'
+// Import the Navbar and Footer components from layout folder
+import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
 
 function App() {
   return (
@@ -33,6 +32,7 @@ function App() {
       <div className="min-h-screen bg-gray-50">
         {/* Use the Navbar component with a theme */}
         <Navbar theme="amber" />
+        <Navbar theme="rose" />
 
         <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
           {/* Add the StyledComponentsExample at the top of the main content */}
