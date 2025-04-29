@@ -21,6 +21,8 @@ import GlobalStyle from './styles/GlobalStyle'
 import StyledComponentsExample from './components/StyledComponentsExample'
 // Import the new Navbar component
 import Navbar from './components/Navbar'
+// Import the new Footer component
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -117,11 +119,8 @@ function App() {
           </div>
         </main>
 
-        <footer className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 border-t border-gray-200 mt-12">
-          <p className="text-center text-gray-500 text-sm">
-            React Interview Prep Examples - Built with React, TypeScript, and Tailwind CSS
-          </p>
-        </footer>
+        {/* Use the Footer component */}
+        <Footer />
       </div>
     </>
   )
