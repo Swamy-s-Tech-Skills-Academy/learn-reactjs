@@ -247,6 +247,59 @@ function Button({ primary, disabled, children }) {
 }
 ```
 
+### Practical Project Example: Sidebar Navigation
+
+The Sidebar component in this project demonstrates effective use of Tailwind CSS for building a dynamic navigation interface:
+
+```tsx
+// Conditional class application based on active state
+<Link
+  to={item.path}
+  className={`
+    flex items-center px-3 py-2 text-sm font-medium rounded-md
+    ${isActive 
+      ? 'bg-indigo-50 text-indigo-600' 
+      : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
+    }
+  `}
+>
+  <FontAwesomeIcon 
+    icon={item.icon} 
+    className={`mr-3 h-4 w-4 ${isActive ? 'text-indigo-500' : 'text-gray-400'}`} 
+  />
+  <span className="truncate">{item.name}</span>
+  {isActive && (
+    <FontAwesomeIcon 
+      icon={faChevronRight} 
+      className="ml-auto h-3 w-3 text-indigo-500" 
+    />
+  )}
+</Link>
+```
+
+Key Tailwind patterns used in this component:
+
+1. **Layout Structure**
+   - `w-64` for fixed width
+   - `h-full` and `overflow-y-auto` for scrollable content
+   - `flex items-center` for alignment
+
+2. **Spacing and Typography**
+   - Consistent padding with `px-3 py-2`
+   - Text styling with `text-sm font-medium`
+   - Truncation with `truncate` class
+
+3. **Interactive States**
+   - Hover states with `hover:text-gray-900 hover:bg-gray-50`
+   - Active states with conditional classes
+
+4. **Icons and Decorations**
+   - Icon sizing with `h-4 w-4`
+   - Spacing between elements with `mr-3`, `ml-auto`
+   - Border with `border-b border-gray-200`
+
+This implementation showcases how Tailwind's utility classes can create a polished UI with minimal custom CSS. The conditional application of classes based on component state (active route) demonstrates a common and powerful pattern in React development.
+
 ### Extracting Component Classes
 
 For reusable component styles, use Tailwind's `@apply` directive in your CSS:

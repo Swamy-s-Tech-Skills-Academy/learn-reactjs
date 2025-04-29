@@ -166,15 +166,40 @@ react-samples/
 ├── src/
 │   ├── assets/        # Images, fonts, etc.
 │   ├── components/    # Reusable components
+│   │   ├── layout/    # Layout components (Sidebar, Navbar, Footer)
+│   │   └── ...        # Other reusable components
 │   ├── hooks/         # Custom hooks examples
 │   ├── patterns/      # Common React patterns
 │   ├── challenges/    # Interview coding challenges
+│   ├── pages/         # Page components
+│   ├── styles/        # Global styles
 │   ├── App.tsx        # Main application component
 │   ├── main.tsx       # Application entry point
 │   └── index.css      # Global styles with Tailwind
 ├── index.html         # HTML template with Inter font
 └── ...configuration files
 ```
+
+## Navigation and Routing Implementation
+
+The project implements a dynamic navigation system with a responsive sidebar that adapts to the current route:
+
+- **Sidebar Component**: The `Sidebar.tsx` component demonstrates:
+  - Dynamic navigation based on the current URL path
+  - Conditional rendering of navigation sections
+  - Active link highlighting
+  - Integration with Font Awesome icons
+  - Responsive design with Tailwind CSS
+
+- **Navigation Structure**: Navigation items are organized by categories:
+  - React Fundamentals
+  - React Hooks
+  - React Patterns
+  - Performance Optimization
+  - Form Handling
+  - Interview Challenges
+
+This approach showcases best practices for implementing navigation in React applications with React Router.
 
 ## Available Scripts
 
@@ -294,7 +319,7 @@ This template provides a minimal setup to get React working in Vite with HMR and
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ## ESLint Configuration
 
