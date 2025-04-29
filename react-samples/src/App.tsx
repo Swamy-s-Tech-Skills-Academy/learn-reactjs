@@ -19,6 +19,8 @@ import {
 import GlobalStyle from './styles/GlobalStyle'
 // Import the StyledComponentsExample component
 import StyledComponentsExample from './components/StyledComponentsExample'
+// Import the new Navbar component
+import Navbar from './components/Navbar'
 
 function App() {
   return (
@@ -27,23 +29,8 @@ function App() {
       <GlobalStyle />
       
       <div className="min-h-screen bg-gray-50">
-        <header className="bg-white shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 flex items-center justify-between">
-            <div className="flex items-center">
-              <img src={reactLogo} className="h-10 w-10 animate-spin-slow" alt="React logo" />
-              <h1 className="ml-3 text-2xl font-bold text-gray-900">React Interview Prep</h1>
-            </div>
-            <a
-              href="https://github.com/Swamy-s-Tech-Skills-Academy/learn-reactjs/tree/main/react-samples"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-gray-700 text-sm flex items-center"
-            >
-              <FontAwesomeIcon icon={faGithub} className="mr-1" />
-              GitHub
-            </a>
-          </div>
-        </header>
+        {/* Use the Navbar component with a theme */}
+        <Navbar theme="blue" />
 
         <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
           {/* Add the StyledComponentsExample at the top of the main content */}
