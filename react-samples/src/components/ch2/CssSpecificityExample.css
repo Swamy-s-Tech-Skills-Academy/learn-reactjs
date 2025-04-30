@@ -1,0 +1,28 @@
+/* CSS for the CssSpecificityExample component */
+
+/* Example 1: Class vs. Element */
+p.example-1 {
+  color: blue;
+}
+
+.text-example-1 {
+  color: red;
+}
+
+/* Example 2: Multiple Classes */
+.text-example-2 {
+  color: green;
+}
+
+.important {
+  color: purple;
+}
+
+/* Example 3: ID vs. Class */
+#special-paragraph {
+  color: orange;
+}
+
+.text-example-3 {
+  color: teal;
+}
