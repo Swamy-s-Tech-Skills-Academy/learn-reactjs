@@ -111,7 +111,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
       case 'fundamentals':
         return 'React Fundamentals';
       case 'ch2':
-        return 'Chapter 2 Examples';
+        return 'Chapter 2';
       case 'hooks':
         return 'React Hooks';
       case 'patterns':

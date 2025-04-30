@@ -23,7 +23,7 @@ const FundamentalsPage = () => (
 
 const Ch2Page = () => (
   <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-    <h1 className="text-3xl font-bold mb-6">Chapter 2 Examples</h1>
+    <h1 className="text-3xl font-bold mb-6">Chapter 2</h1>
     <p className="text-lg text-gray-700">This page will contain various examples from Chapter 2.</p>
   </div>
 );
