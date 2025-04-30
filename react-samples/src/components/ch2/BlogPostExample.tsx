@@ -11,7 +11,7 @@ const BlogPostExample = () => {
       </div>
       
       <img 
-        src="https://via.placeholder.com/800x400" 
+        src="https://placehold.co/600x400" 
         alt="React Components" 
         className="w-full h-64 object-cover rounded-lg mb-6"
       />
