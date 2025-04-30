@@ -107,8 +107,6 @@ function App() {
               <Route path="/forms/*" element={<FormsPage />} />
               <Route path="/challenges" element={<ChallengesPage />} />
               <Route path="/challenges/debounced-search" element={<DebouncedSearch />} />
-              {/* Redirect /styling-demo to the new location */}
-              <Route path="/styling-demo" element={<Navigate to="/ch2/styled-components" replace />} />
             </Routes>
           </main>
         </div>
