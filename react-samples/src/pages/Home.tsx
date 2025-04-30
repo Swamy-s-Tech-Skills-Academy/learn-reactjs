@@ -52,6 +52,22 @@ function Home() {
   return (
     <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Chapter 2 Examples */}
+        <CategoryCard
+          icon={faCode}
+          title="Chapter 2 Examples"
+          description="Collection of Chapter 2 example components and styling demos"
+          items={[
+            { name: "Blog Post Example", path: "/ch2/blog-post" },
+            { name: "CSS Specificity", path: "/ch2/css-specificity" },
+            { name: "Styled Components", path: "/ch2/styled-components" },
+            { name: "Forms (Simple & Advanced)", path: "/ch2/forms" },
+            { name: "Timer", path: "/ch2/timer" },
+            { name: "Drag and Drop", path: "/ch2/drag-and-drop" },
+            { name: "YouTube API Example", path: "/ch2/youtube-api" },
+          ]}
+        />
+
         {/* React Fundamentals */}
         <CategoryCard
           icon={faCode}
@@ -79,56 +95,7 @@ function Home() {
           ]}
         />
 
-        {/* React Patterns */}
-        <CategoryCard
-          icon={faPuzzlePiece}
-          title="React Patterns"
-          description="Common patterns used in React applications"
-          items={[
-            { name: "Render Props", path: "/patterns/render-props" },
-            { name: "HOC (Higher Order Components)", path: "/patterns/hoc" },
-            { name: "Compound Components", path: "/patterns/compound-components" },
-            { name: "Context + Reducer", path: "/patterns/context-reducer" },
-          ]}
-        />
 
-        {/* Performance Optimization */}
-        <CategoryCard
-          icon={faRocket}
-          title="Performance Optimization"
-          description="Techniques to optimize React performance"
-          items={[
-            { name: "Memoization", path: "/performance/memoization" },
-            { name: "Code Splitting", path: "/performance/code-splitting" },
-            { name: "Virtualization", path: "/performance/virtualization" },
-            { name: "React.memo", path: "/performance/react-memo" },
-          ]}
-        />
-
-        {/* Form Handling */}
-        <CategoryCard
-          icon={faList}
-          title="Form Handling"
-          description="Best practices for forms in React"
-          items={[
-            { name: "Controlled Components", path: "/forms/controlled-components" },
-            { name: "Form Validation", path: "/forms/validation" },
-            { name: "Custom Form Hooks", path: "/forms/custom-hooks" },
-          ]}
-        />
-
-        {/* Interview Challenges */}
-        <CategoryCard
-          icon={faLaptop}
-          title="Interview Challenges"
-          description="Common coding challenges from React interviews"
-          items={[
-            { name: "To-Do List", path: "/challenges/todo-list" },
-            { name: "Infinite Scroll", path: "/challenges/infinite-scroll" },
-            { name: "Debounced Search", path: "/challenges/debounced-search" },
-            { name: "Modal Dialog", path: "/challenges/modal-dialog" },
-          ]}
-        />
       </div>
     </main>
   )
