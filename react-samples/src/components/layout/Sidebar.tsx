@@ -28,6 +28,7 @@ const navigationItems = {
     { name: 'FormSimple', path: '/ch2/form-simple', icon: faCode },
     { name: 'FormAdvanced', path: '/ch2/form-advanced', icon: faCode },
     { name: 'Timer', path: '/ch2/timer', icon: faCode },
+    { name: 'StyledComponents', path: '/ch2/styled-components', icon: faCode },
   ],
   hooks: [
     { name: 'useState', path: '/hooks/use-state', icon: faCog },

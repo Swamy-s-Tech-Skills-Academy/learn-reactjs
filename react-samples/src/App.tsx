@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 
 // Import the GlobalStyle component
 import GlobalStyle from './styles/GlobalStyle'
@@ -11,8 +11,6 @@ import Footer from './components/layout/Footer'
 import Home from './pages/Home'
 import Chapter2Page from './pages/Chapter2Page'
 import { DebouncedSearch } from './challenges/debounced-search/DebouncedSearch'
-// Import StyledComponentsExample for a demo page
-import StyledComponentsExample from './components/StyledComponentsExample'
 
 // Placeholder components for routes we don't have full implementations for yet
 const FundamentalsPage = () => (
@@ -109,7 +107,8 @@ function App() {
               <Route path="/forms/*" element={<FormsPage />} />
               <Route path="/challenges" element={<ChallengesPage />} />
               <Route path="/challenges/debounced-search" element={<DebouncedSearch />} />
-              <Route path="/styling-demo" element={<StyledComponentsExample />} />
+              {/* Redirect /styling-demo to the new location */}
+              <Route path="/styling-demo" element={<Navigate to="/ch2/styled-components" replace />} />
             </Routes>
           </main>
         </div>

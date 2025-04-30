@@ -9,6 +9,7 @@ import DragAndDrop from '../components/ch2/DragAndDrop';
 import FormSimple from '../components/ch2/FormSimple';
 import FormAdvanced from '../components/ch2/FormAdvanced';
 import Timer from '../components/ch2/Timer';
+import StyledComponentsExample from '../components/ch2/StyledComponentsExample';
 
 // This will be our main Chapter 2 page component that serves as a container for all Ch2 content
 const Chapter2Page = () => {
@@ -63,6 +64,11 @@ const Chapter2Page = () => {
               path="/ch2/timer"
               description="A timer component demonstrating state and effects." 
             />
+            <ExampleCard 
+              title="Styled Components" 
+              path="/ch2/styled-components"
+              description="Compare styled-components with Tailwind CSS styling." 
+            />
           </div>
         </div>
       ) : (
@@ -75,6 +81,7 @@ const Chapter2Page = () => {
           <Route path="/form-simple" element={<FormSimple />} />
           <Route path="/form-advanced" element={<FormAdvanced />} />
           <Route path="/timer" element={<Timer />} />
+          <Route path="/styled-components" element={<StyledComponentsExample />} />
         </Routes>
       )}
     </div>
