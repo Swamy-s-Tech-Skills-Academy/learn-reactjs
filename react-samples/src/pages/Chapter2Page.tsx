@@ -1,6 +1,15 @@
 import React from 'react';
 import { Routes, Route, useLocation, Link } from 'react-router-dom';
 
+// Import all Chapter 2 components
+import BlogPostExample from '../components/ch2/BlogPostExample';
+import CssSpecificityExample from '../components/ch2/CssSpecificityExample';
+import YouTubeApiExample from '../components/ch2/YouTubeApiExample';
+import DragAndDrop from '../components/ch2/DragAndDrop';
+import FormSimple from '../components/ch2/FormSimple';
+import FormAdvanced from '../components/ch2/FormAdvanced';
+import Timer from '../components/ch2/Timer';
+
 // This will be our main Chapter 2 page component that serves as a container for all Ch2 content
 const Chapter2Page = () => {
   const location = useLocation();
@@ -59,13 +68,13 @@ const Chapter2Page = () => {
       ) : (
         // Otherwise, render the sub-routes
         <Routes>
-          <Route path="/blog-post" element={<div>Blog Post Example Component will load here</div>} />
-          <Route path="/css-specificity" element={<div>CSS Specificity Example Component will load here</div>} />
-          <Route path="/youtube-api" element={<div>YouTube API Example Component will load here</div>} />
-          <Route path="/drag-and-drop" element={<div>Drag and Drop Component will load here</div>} />
-          <Route path="/form-simple" element={<div>Simple Form Component will load here</div>} />
-          <Route path="/form-advanced" element={<div>Advanced Form Component will load here</div>} />
-          <Route path="/timer" element={<div>Timer Component will load here</div>} />
+          <Route path="/blog-post" element={<BlogPostExample />} />
+          <Route path="/css-specificity" element={<CssSpecificityExample />} />
+          <Route path="/youtube-api" element={<YouTubeApiExample />} />
+          <Route path="/drag-and-drop" element={<DragAndDrop />} />
+          <Route path="/form-simple" element={<FormSimple />} />
+          <Route path="/form-advanced" element={<FormAdvanced />} />
+          <Route path="/timer" element={<Timer />} />
         </Routes>
       )}
     </div>
