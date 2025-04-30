@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
 import {
   faCode,
   faCog,
@@ -8,6 +9,7 @@ import {
   faLaptop,
   faArrowRight
 } from '@fortawesome/free-solid-svg-icons'
+import StyledComponentsExample from '../components/StyledComponentsExample'
 
 interface CategoryCardProps {
   icon: any;
@@ -31,13 +33,13 @@ function CategoryCard({ icon, title, description, items }: CategoryCardProps) {
           <ul className="divide-y divide-gray-200">
             {items.map((item) => (
               <li key={item.path} className="py-2">
-                <a
-                  href={item.path}
+                <Link
+                  to={item.path}
                   className="block text-indigo-600 hover:text-indigo-900 hover:bg-gray-50 -m-2 p-2 rounded flex items-center"
                 >
                   <FontAwesomeIcon icon={faArrowRight} className="mr-2 text-xs" />
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -50,6 +52,9 @@ function CategoryCard({ icon, title, description, items }: CategoryCardProps) {
 function Home() {
   return (
     <main className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+      {/* Add the StyledComponentsExample at the top of the main content */}
+      <StyledComponentsExample />
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* React Fundamentals */}
         <CategoryCard
@@ -57,10 +62,10 @@ function Home() {
           title="React Fundamentals"
           description="Components, props, state, and lifecycle methods"
           items={[
-            { name: "Component Types", path: "/components/types" },
-            { name: "Props & State", path: "/components/props-state" },
-            { name: "Conditional Rendering", path: "/components/conditional-rendering" },
-            { name: "Lists & Keys", path: "/components/lists-keys" },
+            { name: "Component Types", path: "/fundamentals/types" },
+            { name: "Props & State", path: "/fundamentals/props-state" },
+            { name: "Conditional Rendering", path: "/fundamentals/conditional-rendering" },
+            { name: "Lists & Keys", path: "/fundamentals/lists-keys" },
           ]}
         />
 

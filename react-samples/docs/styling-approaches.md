@@ -65,6 +65,66 @@ function Button({ primary, children }) {
 }
 ```
 
+### Real-World Project Example: Sidebar Component
+
+The project includes a robust example of Tailwind CSS implementation in the `Sidebar.tsx` component located in `src/components/layout/Sidebar.tsx`. This component demonstrates several key Tailwind CSS features:
+
+```tsx
+return (
+  <aside className={`w-64 bg-white shadow-sm ${className}`}>
+    <div className="h-full overflow-y-auto">
+      <div className="px-4 py-5 border-b border-gray-200">
+        <h2 className="text-lg font-medium text-gray-900">{getSectionTitle()}</h2>
+      </div>
+      <nav className="mt-3 px-3">
+        <ul className="space-y-1">
+          {items.map((item) => {
+            const isActive = location.pathname === item.path;
+            return (
+              <li key={item.path}>
+                <Link
+                  to={item.path}
+                  className={`
+                    flex items-center px-3 py-2 text-sm font-medium rounded-md
+                    ${isActive 
+                      ? 'bg-indigo-50 text-indigo-600' 
+                      : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
+                    }
+                  `}
+                >
+                  <FontAwesomeIcon 
+                    icon={item.icon} 
+                    className={`mr-3 h-4 w-4 ${isActive ? 'text-indigo-500' : 'text-gray-400'}`} 
+                  />
+                  <span className="truncate">{item.name}</span>
+                  {isActive && (
+                    <FontAwesomeIcon 
+                      icon={faChevronRight} 
+                      className="ml-auto h-3 w-3 text-indigo-500" 
+                    />
+                  )}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </div>
+  </aside>
+);
+```
+
+This implementation showcases:
+
+1. **Conditional Styling**: Using ternary operators to apply different classes based on the active state
+2. **Layout Utilities**: Using Flexbox utilities like `flex`, `items-center`, and spacing utilities 
+3. **Responsive Design**: Setting width with `w-64` and managing overflow with `overflow-y-auto`
+4. **Typography Control**: Managing text size and weight with `text-sm`, `font-medium`, etc.
+5. **Space Management**: Using padding (`px-3`, `py-2`) and margin (`mr-3`, `ml-auto`) utilities
+6. **Dynamic Class Composition**: Combining fixed classes with conditionally applied classes
+
+The sidebar component is a excellent example of how Tailwind's utility-first approach enables rapid UI development with minimal custom CSS.
+
 ## Option 2: styled-components
 
 styled-components is a CSS-in-JS library that uses tagged template literals to style components. It allows writing actual CSS in your JavaScript/TypeScript files.
