@@ -9,7 +9,19 @@ This project implements a hybrid approach using both Tailwind CSS and styled-com
 - **Tailwind CSS** for utility-based styling and overall layout
 - **styled-components** for component-specific styling and global styles
 
-You can see a practical example of this hybrid approach in the `StyledComponentsExample.tsx` component where both techniques are used side by side.
+You can see a practical example of this hybrid approach in the `StyledComponentsExample.tsx` component found in the `src/components/ch2/` directory, where both techniques are used side by side.
+
+## Chapter 2 Examples
+
+Our Chapter 2 section contains several examples that showcase different styling approaches:
+
+1. **BlogPostExample**: Demonstrates content styling for blog posts using Tailwind CSS.
+2. **CssSpecificityExample**: Illustrates CSS specificity concepts with both CSS files and inline styles.
+3. **StyledComponentsExample**: Provides a comparison between styled-components and Tailwind CSS approaches.
+4. **FormSimple and FormAdvanced**: Show form styling with different levels of complexity using Tailwind CSS.
+5. **Timer**: Demonstrates building an interactive UI with state-based styling changes.
+
+To view these examples, navigate to the Chapter 2 section in the application (/ch2).
 
 ## Option 1: Tailwind CSS (Current Project Setup)
 

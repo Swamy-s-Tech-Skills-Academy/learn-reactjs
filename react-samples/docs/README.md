@@ -167,11 +167,22 @@ react-samples/
 │   ├── assets/        # Images, fonts, etc.
 │   ├── components/    # Reusable components
 │   │   ├── layout/    # Layout components (Sidebar, Navbar, Footer)
+│   │   ├── ch2/       # Chapter 2 example components
+│   │   │   ├── BlogPostExample.tsx      # Blog post styling example
+│   │   │   ├── CssSpecificityExample.tsx # CSS specificity concepts
+│   │   │   ├── DragAndDrop.tsx          # Drag and drop functionality
+│   │   │   ├── FormSimple.tsx           # Basic form implementation
+│   │   │   ├── FormAdvanced.tsx         # Form with validation
+│   │   │   ├── StyledComponentsExample.tsx # Styling comparison
+│   │   │   ├── Timer.tsx                # Timer implementation with hooks
+│   │   │   └── YouTubeApiExample.tsx    # External API integration
 │   │   └── ...        # Other reusable components
 │   ├── hooks/         # Custom hooks examples
 │   ├── patterns/      # Common React patterns
 │   ├── challenges/    # Interview coding challenges
 │   ├── pages/         # Page components
+│   │   ├── Home.tsx              # Home page
+│   │   └── Chapter2Page.tsx      # Chapter 2 content container
 │   ├── styles/        # Global styles
 │   ├── App.tsx        # Main application component
 │   ├── main.tsx       # Application entry point
